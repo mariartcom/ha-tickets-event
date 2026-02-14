@@ -1,10 +1,10 @@
 {
   "domain": "tickets_events",
   "name": "Tickets & Events",
-  "codeowners": ["@quoda-team"],
+  "codeowners": ["@mariartcom"],
   "config_flow": true,
-  "documentation": "https://github.com/quoda-team/ha-tickets-event",
-  "issue_tracker": "https://github.com/quoda-team/ha-tickets-event/issues",
+  "documentation": "https://github.com/mariartcom/ha-tickets-event",
+  "issue_tracker": "https://github.com/mariartcom/ha-tickets-event/issues",
   "requirements": [
     "aiohttp>=3.9.0",
     "qrcode>=7.4.2",

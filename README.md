@@ -29,7 +29,7 @@ A Home Assistant integration that provides event and attraction listings with ti
 2. Click on "Integrations"
 3. Click the three dots in the top right corner
 4. Select "Custom repositories"
-5. Add this repository URL: `https://github.com/quoda-team/ha-tickets-event`
+5. Add this repository URL: `https://github.com/mariartcom/ha-tickets-event`
 6. Select category: "Integration"
 7. Click "Add"
 8. Find "Tickets & Events" in the integration list
@@ -38,7 +38,7 @@ A Home Assistant integration that provides event and attraction listings with ti
 
 ### Manual Installation
 
-1. Download the latest release from the [releases page](https://github.com/quoda-team/ha-tickets-event/releases)
+1. Download the latest release from the [releases page](https://github.com/mariartcom/ha-tickets-event/releases)
 2. Extract the `tickets_events` folder from the archive
 3. Copy the folder to your `custom_components` directory:
    ```
@@ -347,9 +347,9 @@ Contributions are welcome! Please:
 
 ## Support
 
-- **Issues**: [GitHub Issues](https://github.com/quoda-team/ha-tickets-event/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/quoda-team/ha-tickets-event/discussions)
-- **Documentation**: [Wiki](https://github.com/quoda-team/ha-tickets-event/wiki)
+- **Issues**: [GitHub Issues](https://github.com/mariartcom/ha-tickets-event/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/mariartcom/ha-tickets-event/discussions)
+- **Documentation**: [Wiki](https://github.com/mariartcom/ha-tickets-event/wiki)
 
 ## License
 

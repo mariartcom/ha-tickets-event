@@ -46,5 +46,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Configuration flow
 - Documentation
 
-[Unreleased]: https://github.com/quoda-team/ha-tickets-event/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/quoda-team/ha-tickets-event/releases/tag/v0.1.0
+[Unreleased]: https://github.com/mariartcom/ha-tickets-event/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/mariartcom/ha-tickets-event/releases/tag/v0.1.0
