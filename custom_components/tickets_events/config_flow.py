@@ -17,7 +17,9 @@ from .const import (
     CONF_CITY_NAME,
     CONF_CURRENCY,
     CONF_USE_LOCATION,
+    CONF_USE_SAMPLE_DATA,
     DEFAULT_CURRENCY,
+    DEFAULT_USE_SAMPLE_DATA,
     DOMAIN,
     SUPPORTED_CURRENCIES,
 )
@@ -31,7 +33,9 @@ async def validate_input(hass: HomeAssistant, data: dict[str, Any]) -> dict[str,
     
     Data has the keys from STEP_USER_DATA_SCHEMA with values provided by the user.
     """
-    client = TicketsEventsApiClient()
+    # Use sample data by default
+    use_sample_data = data.get(CONF_USE_SAMPLE_DATA, DEFAULT_USE_SAMPLE_DATA)
+    client = TicketsEventsApiClient(use_sample_data=use_sample_data)
     
     # Validate city if provided
     if data.get(CONF_CITY_ID):
@@ -71,7 +75,8 @@ class TicketsEventsConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         # Fetch cities list if not already fetched
         if not self._cities:
             try:
-                client = TicketsEventsApiClient()
+                # Use sample data for config flow
+                client = TicketsEventsApiClient(use_sample_data=DEFAULT_USE_SAMPLE_DATA)
                 self._cities = await client.get_cities()
             except Exception as err:
                 _LOGGER.error("Error fetching cities: %s", err)
@@ -86,10 +91,16 @@ class TicketsEventsConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                 _LOGGER.exception("Unexpected exception")
                 errors["base"] = "unknown"
             else:
+                # Add use_sample_data to the config data
+                config_data = dict(user_input)
+                # Always use sample data if not explicitly set
+                if CONF_USE_SAMPLE_DATA not in config_data:
+                    config_data[CONF_USE_SAMPLE_DATA] = DEFAULT_USE_SAMPLE_DATA
+                
                 # Create entry
                 return self.async_create_entry(
                     title=info["title"],
-                    data=user_input,
+                    data=config_data,
                 )
 
         # Build city options

@@ -13,7 +13,9 @@ from .const import (
     API_BASE_URL,
     API_RATE_LIMIT,
     API_RATE_LIMIT_PERIOD,
+    CONF_USE_SAMPLE_DATA,
     DEFAULT_TIMEOUT,
+    DEFAULT_USE_SAMPLE_DATA,
     ENDPOINT_CALENDAR,
     ENDPOINT_CITIES,
     ENDPOINT_CITY,
@@ -23,6 +25,13 @@ from .const import (
     ERROR_CANNOT_CONNECT,
     ERROR_RATE_LIMIT,
     ERROR_UNKNOWN,
+)
+from .sample_data import (
+    SAMPLE_CITIES,
+    get_nearby_sample_events,
+    get_sample_events_response,
+    resolve_sample_location,
+    search_sample_events,
 )
 
 _LOGGER = logging.getLogger(__name__)
@@ -80,15 +89,20 @@ class TicketsEventsApiClient:
     def __init__(
         self,
         session: aiohttp.ClientSession | None = None,
+        use_sample_data: bool = DEFAULT_USE_SAMPLE_DATA,
     ) -> None:
         """Initialize the API client."""
         self._session = session
         self._close_session = False
         self._rate_limiter = RateLimiter(API_RATE_LIMIT, API_RATE_LIMIT_PERIOD)
+        self._use_sample_data = use_sample_data
 
         if self._session is None:
             self._session = aiohttp.ClientSession()
             self._close_session = True
+        
+        if self._use_sample_data:
+            _LOGGER.info("API client initialized with SAMPLE DATA mode enabled")
 
     async def close(self) -> None:
         """Close the session."""
@@ -144,6 +158,10 @@ class TicketsEventsApiClient:
 
     async def get_cities(self) -> list[dict[str, Any]]:
         """Get list of available cities."""
+        if self._use_sample_data:
+            _LOGGER.debug("Returning sample cities data")
+            return SAMPLE_CITIES
+        
         try:
             data = await self._api_request(ENDPOINT_CITIES)
             return data if isinstance(data, list) else []
@@ -172,6 +190,10 @@ class TicketsEventsApiClient:
         limit: int = 50,
     ) -> dict[str, Any]:
         """Get events for a specific city."""
+        if self._use_sample_data:
+            _LOGGER.debug("Returning sample events for city %s", city_id)
+            return get_sample_events_response(city_id, currency, limit)
+        
         endpoint = ENDPOINT_CITY.format(city_id=city_id)
         params = {
             "currency": currency,
@@ -187,6 +209,10 @@ class TicketsEventsApiClient:
     async def search_events(
         self,
         query: str,
+        if self._use_sample_data:
+            _LOGGER.debug("Returning sample search results for query: %s", query)
+            return search_sample_events(query, currency, limit)
+        
         currency: str = "EUR",
         limit: int = 50,
     ) -> dict[str, Any]:
@@ -204,6 +230,10 @@ class TicketsEventsApiClient:
             raise
 
     async def get_nearby_events(
+        if self._use_sample_data:
+            _LOGGER.debug("Returning sample nearby events")
+            return get_nearby_sample_events(latitude, longitude, currency, radius, limit)
+        
         self,
         latitude: float,
         longitude: float,
@@ -232,6 +262,10 @@ class TicketsEventsApiClient:
             raise
 
     async def get_events_by_date(
+        if self._use_sample_data:
+            _LOGGER.debug("Returning sample events for date range %s to %s", date_from, date_to)
+            return get_sample_events_response(city_id, currency, limit)
+        
         self,
         city_id: str,
         date_from: str,
@@ -249,6 +283,10 @@ class TicketsEventsApiClient:
         }
         
         try:
+        if self._use_sample_data:
+            _LOGGER.debug("Returning sample location data")
+            return resolve_sample_location(ip_address)
+        
             return await self._api_request(ENDPOINT_CALENDAR, params)
         except Exception as err:
             _LOGGER.error(

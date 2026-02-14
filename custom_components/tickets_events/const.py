@@ -11,12 +11,14 @@ CONF_CITY_NAME: Final = "city_name"
 CONF_CURRENCY: Final = "currency"
 CONF_USE_LOCATION: Final = "use_location"
 CONF_UPDATE_INTERVAL: Final = "update_interval"
+CONF_USE_SAMPLE_DATA: Final = "use_sample_data"
 
 # Defaults
 DEFAULT_CURRENCY: Final = "EUR"
 DEFAULT_UPDATE_INTERVAL: Final = timedelta(hours=24)  # Once per day
 DEFAULT_MAX_EVENTS: Final = 50
 DEFAULT_TIMEOUT: Final = 30
+DEFAULT_USE_SAMPLE_DATA: Final = True  # Use sample data by default for testing
 
 # API
 API_BASE_URL: Final = "https://bff.mangocity.md/events"

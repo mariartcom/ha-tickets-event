@@ -21,8 +21,10 @@ from .const import (
     CONF_CITY_ID,
     CONF_CITY_NAME,
     CONF_CURRENCY,
+    CONF_USE_SAMPLE_DATA,
     DEFAULT_CURRENCY,
     DEFAULT_UPDATE_INTERVAL,
+    DEFAULT_USE_SAMPLE_DATA,
     DOMAIN,
 )
 
@@ -41,7 +43,14 @@ class TicketsEventsDataUpdateCoordinator(DataUpdateCoordinator):
     ) -> None:
         """Initialize."""
         self.config_entry = entry
-        self.api = TicketsEventsApiClient(session=hass.helpers.aiohttp_client.async_get_clientsession())
+        
+        # Get use_sample_data from entry data, default to True
+        use_sample_data = entry.data.get(CONF_USE_SAMPLE_DATA, DEFAULT_USE_SAMPLE_DATA)
+        
+        self.api = TicketsEventsApiClient(
+            session=hass.helpers.aiohttp_client.async_get_clientsession(),
+            use_sample_data=use_sample_data,
+        )
         
         # Get configuration
         self.city_id = entry.data.get(CONF_CITY_ID, "auto")
