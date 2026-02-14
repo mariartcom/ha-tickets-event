@@ -7,6 +7,7 @@ from typing import Any
 
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
+from homeassistant.helpers import aiohttp_client
 from homeassistant.helpers.update_coordinator import (
     DataUpdateCoordinator,
     UpdateFailed,
@@ -48,7 +49,7 @@ class TicketsEventsDataUpdateCoordinator(DataUpdateCoordinator):
         use_sample_data = entry.data.get(CONF_USE_SAMPLE_DATA, DEFAULT_USE_SAMPLE_DATA)
         
         self.api = TicketsEventsApiClient(
-            session=hass.helpers.aiohttp_client.async_get_clientsession(),
+            session=aiohttp_client.async_get_clientsession(hass),
             use_sample_data=use_sample_data,
         )
         
