@@ -1,0 +1,10 @@
+{
+  "domain": "tickets_event",
+  "name": "Tickets Event",
+  "version": "1.0.0",
+  "documentation": "https://github.com/mariartcom/ha-tickets-event",
+  "issue_tracker": "https://github.com/mariartcom/ha-tickets-event/issues",
+  "requirements": [],
+  "codeowners": ["@mariartcom"],
+  "iot_class": "local_polling"
+}

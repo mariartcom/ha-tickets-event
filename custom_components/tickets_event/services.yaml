@@ -1,0 +1,39 @@
+fire_event:
+  name: Fire Ticket Event
+  description: Fires a custom ticket event that can be used in automations
+  fields:
+    type:
+      name: Event Type
+      description: The type of ticket event (e.g., new, updated, closed)
+      required: false
+      default: "new"
+      example: "new"
+      selector:
+        text:
+    ticket_id:
+      name: Ticket ID
+      description: The unique identifier for the ticket
+      required: true
+      example: "TICKET-123"
+      selector:
+        text:
+    description:
+      name: Description
+      description: A description of the ticket or event
+      required: false
+      example: "New support request received"
+      selector:
+        text:
+    priority:
+      name: Priority
+      description: The priority level of the ticket
+      required: false
+      default: "normal"
+      example: "high"
+      selector:
+        select:
+          options:
+            - "low"
+            - "normal"
+            - "high"
+            - "critical"

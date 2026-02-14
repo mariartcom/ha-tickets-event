@@ -1,0 +1,62 @@
+# Example configuration for Home Assistant
+
+# This integration does not require configuration.yaml entries
+# The service is automatically registered when the integration loads.
+
+# Example automation using the tickets_event integration
+automation:
+  # Example 1: Create a ticket when a sensor goes above threshold
+  - alias: "High Temperature Ticket"
+    trigger:
+      - platform: numeric_state
+        entity_id: sensor.living_room_temperature
+        above: 30
+    action:
+      - service: tickets_event.fire_event
+        data:
+          type: "new"
+          ticket_id: "TEMP-{{ now().strftime('%Y%m%d%H%M%S') }}"
+          description: "Living room temperature is too high: {{ states('sensor.living_room_temperature') }}°C"
+          priority: "high"
+
+  # Example 2: Listen for ticket events and send notifications
+  - alias: "Notify on High Priority Tickets"
+    trigger:
+      - platform: event
+        event_type: tickets_event_event
+        event_data:
+          priority: "high"
+    action:
+      - service: notify.mobile_app
+        data:
+          message: "High priority ticket created: {{ trigger.event.data.description }}"
+          title: "Urgent: {{ trigger.event.data.ticket_id }}"
+
+  # Example 3: Create ticket from a script
+  - alias: "Manual Ticket Creation"
+    trigger:
+      - platform: state
+        entity_id: input_button.create_support_ticket
+    action:
+      - service: tickets_event.fire_event
+        data:
+          type: "new"
+          ticket_id: "MANUAL-{{ now().strftime('%Y%m%d%H%M%S') }}"
+          description: "Manual support ticket created"
+          priority: "normal"
+
+# Example script
+script:
+  create_critical_ticket:
+    alias: "Create Critical Ticket"
+    sequence:
+      - service: tickets_event.fire_event
+        data:
+          type: "new"
+          ticket_id: "CRIT-{{ now().strftime('%Y%m%d%H%M%S') }}"
+          description: "Critical issue detected"
+          priority: "critical"
+      - service: persistent_notification.create
+        data:
+          title: "Critical Ticket Created"
+          message: "A critical ticket has been created and logged"
