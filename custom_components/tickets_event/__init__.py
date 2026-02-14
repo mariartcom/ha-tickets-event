@@ -15,8 +15,13 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
 
     async def handle_ticket_event(call):
         """Handle the ticket event service call."""
-        event_type = call.data.get("type", "new")
+        # Validate required fields
         ticket_id = call.data.get("ticket_id")
+        if not ticket_id:
+            _LOGGER.error("ticket_id is required but was not provided")
+            return
+
+        event_type = call.data.get("type", "new")
         description = call.data.get("description", "")
         priority = call.data.get("priority", "normal")
 

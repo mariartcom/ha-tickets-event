@@ -69,8 +69,19 @@ def validate_files():
     
     # Test 5: Check for required code elements
     print("\n5. Checking code structure...")
-    assert 'DOMAIN = "tickets_event"' in code, "Missing DOMAIN constant"
-    print("   ✓ DOMAIN constant defined")
+    
+    # Parse the AST to check for DOMAIN constant
+    tree = ast.parse(code)
+    domain_found = False
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Assign):
+            for target in node.targets:
+                if isinstance(target, ast.Name) and target.id == "DOMAIN":
+                    if isinstance(node.value, ast.Constant) and node.value.value == "tickets_event":
+                        domain_found = True
+                        break
+    assert domain_found, "DOMAIN constant not properly defined"
+    print("   ✓ DOMAIN constant defined correctly")
     
     assert "async def async_setup" in code, "Missing async_setup function"
     print("   ✓ async_setup function defined")

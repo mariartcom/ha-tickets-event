@@ -6,5 +6,5 @@
   "issue_tracker": "https://github.com/mariartcom/ha-tickets-event/issues",
   "requirements": [],
   "codeowners": ["@mariartcom"],
-  "iot_class": "local_polling"
+  "iot_class": "calculated"
 }
