@@ -4,9 +4,16 @@ A beautiful custom Lovelace card for displaying events with booking buttons.
 
 ## Installation
 
-### Automatic (via Integration)
+### Automatic (via HACS)
 
-The card is automatically installed when you install the Tickets & Events integration via HACS.
+The card is automatically available when you install the Tickets & Events integration via HACS. Just add the resource:
+
+1. Go to **Settings** → **Dashboards** → **⋮** (top right) → **Resources**
+2. Click **+ Add Resource**
+3. URL: `/hacsfiles/tickets_events/tickets-events-card.js`
+4. Resource type: **JavaScript Module**
+
+After adding the resource, the card will appear in the card picker when adding cards to your dashboard.
 
 ### Manual Installation
 
