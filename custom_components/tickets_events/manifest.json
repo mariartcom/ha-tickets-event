@@ -1,0 +1,17 @@
+{
+  "domain": "tickets_events",
+  "name": "Tickets & Events",
+  "codeowners": ["@quoda-team"],
+  "config_flow": true,
+  "documentation": "https://github.com/quoda-team/ha-tickets-event",
+  "issue_tracker": "https://github.com/quoda-team/ha-tickets-event/issues",
+  "requirements": [
+    "aiohttp>=3.9.0",
+    "qrcode>=7.4.2",
+    "pillow>=10.0.0"
+  ],
+  "dependencies": [],
+  "version": "0.1.0",
+  "iot_class": "cloud_polling",
+  "integration_type": "service"
+}

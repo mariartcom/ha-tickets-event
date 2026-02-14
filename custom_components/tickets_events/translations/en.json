@@ -1,0 +1,68 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Setup Tickets & Events",
+        "description": "Configure your tickets and events integration",
+        "data": {
+          "city_id": "City",
+          "currency": "Currency"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Unable to connect to the API. Please check your internet connection and try again.",
+      "unknown": "An unexpected error occurred. Please try again.",
+      "city_not_found": "The selected city was not found."
+    },
+    "abort": {
+      "already_configured": "This integration is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Tickets & Events Options",
+        "description": "Update your tickets and events configuration",
+        "data": {
+          "city_id": "City",
+          "currency": "Currency"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "today": {
+        "name": "Today Events"
+      },
+      "nearby": {
+        "name": "Nearby Events"
+      },
+      "calendar": {
+        "name": "Calendar Events"
+      },
+      "search": {
+        "name": "Search Results"
+      }
+    }
+  },
+  "services": {
+    "search_events": {
+      "name": "Search Events",
+      "description": "Search for events by name or keyword"
+    },
+    "get_events_by_date": {
+      "name": "Get Events by Date",
+      "description": "Retrieve events within a specific date range"
+    },
+    "generate_booking_url": {
+      "name": "Generate Booking URL",
+      "description": "Generate a customized booking URL for an event"
+    },
+    "refresh_events": {
+      "name": "Refresh Events",
+      "description": "Manually refresh event data"
+    }
+  }
+}

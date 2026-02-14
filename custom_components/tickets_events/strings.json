@@ -1,0 +1,27 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "data": {
+          "city_id": "City",
+          "currency": "Currency"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Unable to connect to the API",
+      "unknown": "Unexpected error occurred",
+      "city_not_found": "City not found"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "city_id": "City",
+          "currency": "Currency"
+        }
+      }
+    }
+  }
+}

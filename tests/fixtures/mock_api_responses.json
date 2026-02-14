@@ -1,0 +1,222 @@
+{
+  "events_bucharest": {
+    "destinationTitle": "Bucharest",
+    "destinationUrl": "https://www.tiqets.com/en/bucharest-attractions-c76753/?currency=EUR",
+    "locationType": "city",
+    "offeringCards": [
+      {
+        "bookingUrl": "https://www.tiqets.com/en/bucharest-attractions-c76753/tickets-for-palace-of-the-parliament-entrance-guided-tour-p976227/?currency=EUR",
+        "city": "Bucharest",
+        "description": "Communist megalomania meets Neoclassical architecture",
+        "id": 976227,
+        "images": [
+          {
+            "alt": "Large neoclassical building with numerous windows and arches, set against a blue sky with clouds, and a wet pavement foreground.",
+            "url": "https://aws-tiqets-cdn.imgix.net/images/content/c831fe28af104feabd1e668533da030b.jpg?auto=format%2Ccompress&fit=crop&q=70"
+          },
+          {
+            "alt": "Large neoclassical building with ornate details, surrounded by trees, and a staircase leading up from a gated entrance. People walk below.",
+            "url": "https://aws-tiqets-cdn.imgix.net/images/content/3ba90c904ee6466eb96fc0a144c33739.jpg?auto=format%2Ccompress&fit=crop&q=70"
+          }
+        ],
+        "isCheckoutDisabled": false,
+        "price": 32.90,
+        "priceEur": 32.90,
+        "rating": 4.3,
+        "ratingCount": 651,
+        "title": "Palace of the Parliament: Entry Ticket + Guided Tour",
+        "type": "product"
+      },
+      {
+        "bookingUrl": "https://www.tiqets.com/en/bucharest-attractions-c76753/tickets-for-museum-of-senses-bucharest-p978632/?currency=EUR",
+        "city": "Bucharest",
+        "description": "Ignite all your senses through a journey of play and education",
+        "id": 978632,
+        "images": [
+          {
+            "alt": "Three people appear to be standing upside-down in a room with construction tools and brick walls.",
+            "url": "https://aws-tiqets-cdn.imgix.net/images/content/97d6ab78b82d4d8fbfd2ffd7889ef46c.jpg?auto=format%2Ccompress&fit=crop&q=70"
+          },
+          {
+            "alt": "A person stands in the corner of a white room, posing between painted angel wings on the walls. They hold a drink and wear casual clothing.",
+            "url": "https://aws-tiqets-cdn.imgix.net/images/content/446f0f8df8eb45528c4407193154268d.jpg?auto=format%2Ccompress&fit=crop&q=70"
+          }
+        ],
+        "isCheckoutDisabled": false,
+        "price": 11.79,
+        "priceEur": 11.79,
+        "rating": 4.1,
+        "ratingCount": 82,
+        "title": "Museum of Senses Bucharest: Entry Ticket",
+        "type": "product"
+      },
+      {
+        "bookingUrl": "https://www.tiqets.com/en/bucharest-attractions-c76753/tickets-for-dracula-s-castle-peles-castle-and-brasov-city-tour-p986447/?currency=EUR",
+        "city": "Bucharest",
+        "description": "Visit the legendary Dracula's Castle and explore Transylvania",
+        "id": 986447,
+        "images": [
+          {
+            "alt": "Medieval castle with red roofs and white walls perched on a hilltop surrounded by autumn forest.",
+            "url": "https://aws-tiqets-cdn.imgix.net/images/content/aa1fe28af104feabd1e668533da030b.jpg?auto=format%2Ccompress&fit=crop&q=70"
+          }
+        ],
+        "isCheckoutDisabled": false,
+        "price": 89.50,
+        "priceEur": 89.50,
+        "rating": 4.7,
+        "ratingCount": 234,
+        "title": "Dracula's Castle & Peles Castle Day Tour from Bucharest",
+        "type": "product"
+      }
+    ]
+  },
+  "events_paris": {
+    "destinationTitle": "Paris",
+    "destinationUrl": "https://www.tiqets.com/en/paris-attractions-c67097/?currency=EUR",
+    "locationType": "city",
+    "offeringCards": [
+      {
+        "bookingUrl": "https://www.tiqets.com/en/paris-attractions-c67097/tickets-for-eiffel-tower-summit-p968001/?currency=EUR",
+        "city": "Paris",
+        "description": "Skip the line and ascend to the summit of Paris's iconic landmark",
+        "id": 968001,
+        "images": [
+          {
+            "alt": "Eiffel Tower at sunset with golden light illuminating the structure.",
+            "url": "https://aws-tiqets-cdn.imgix.net/images/content/eiffel-tower-summit.jpg?auto=format%2Ccompress&fit=crop&q=70"
+          }
+        ],
+        "isCheckoutDisabled": false,
+        "price": 35.30,
+        "priceEur": 35.30,
+        "rating": 4.8,
+        "ratingCount": 1523,
+        "title": "Eiffel Tower: Summit Access with Host",
+        "type": "product"
+      },
+      {
+        "bookingUrl": "https://www.tiqets.com/en/paris-attractions-c67097/tickets-for-louvre-museum-p968002/?currency=EUR",
+        "city": "Paris",
+        "description": "Explore the world's largest art museum and home to the Mona Lisa",
+        "id": 968002,
+        "images": [
+          {
+            "alt": "Glass pyramid entrance of the Louvre Museum at twilight.",
+            "url": "https://aws-tiqets-cdn.imgix.net/images/content/louvre-museum.jpg?auto=format%2Ccompress&fit=crop&q=70"
+          }
+        ],
+        "isCheckoutDisabled": false,
+        "price": 22.00,
+        "priceEur": 22.00,
+        "rating": 4.6,
+        "ratingCount": 2891,
+        "title": "Louvre Museum: Timed Entrance Ticket",
+        "type": "product"
+      }
+    ]
+  },
+  "search_results": {
+    "query": "museum",
+    "totalResults": 2,
+    "offeringCards": [
+      {
+        "bookingUrl": "https://www.tiqets.com/en/bucharest-attractions-c76753/tickets-for-museum-of-senses-bucharest-p978632/?currency=EUR",
+        "city": "Bucharest",
+        "description": "Ignite all your senses through a journey of play and education",
+        "id": 978632,
+        "images": [
+          {
+            "alt": "Interactive museum exhibit with optical illusions",
+            "url": "https://aws-tiqets-cdn.imgix.net/images/content/97d6ab78b82d4d8fbfd2ffd7889ef46c.jpg?auto=format%2Ccompress&fit=crop&q=70"
+          }
+        ],
+        "isCheckoutDisabled": false,
+        "price": 11.79,
+        "priceEur": 11.79,
+        "rating": 4.1,
+        "ratingCount": 82,
+        "title": "Museum of Senses Bucharest: Entry Ticket",
+        "type": "product"
+      },
+      {
+        "bookingUrl": "https://www.tiqets.com/en/paris-attractions-c67097/tickets-for-louvre-museum-p968002/?currency=EUR",
+        "city": "Paris",
+        "description": "Explore the world's largest art museum and home to the Mona Lisa",
+        "id": 968002,
+        "images": [
+          {
+            "alt": "Glass pyramid entrance of the Louvre Museum",
+            "url": "https://aws-tiqets-cdn.imgix.net/images/content/louvre-museum.jpg?auto=format%2Ccompress&fit=crop&q=70"
+          }
+        ],
+        "isCheckoutDisabled": false,
+        "price": 22.00,
+        "priceEur": 22.00,
+        "rating": 4.6,
+        "ratingCount": 2891,
+        "title": "Louvre Museum: Timed Entrance Ticket",
+        "type": "product"
+      }
+    ]
+  },
+  "location_resolution": {
+    "ip": "185.120.32.45",
+    "city": "Bucharest",
+    "cityId": "c76753",
+    "country": "Romania",
+    "countryCode": "RO",
+    "latitude": 44.4268,
+    "longitude": 26.1025,
+    "timezone": "Europe/Bucharest",
+    "currency": "RON"
+  },
+  "cities_list": [
+    {
+      "id": "c76753",
+      "name": "Bucharest",
+      "country": "Romania",
+      "countryCode": "RO"
+    },
+    {
+      "id": "c67097",
+      "name": "Paris",
+      "country": "France",
+      "countryCode": "FR"
+    },
+    {
+      "id": "c67098",
+      "name": "London",
+      "country": "United Kingdom",
+      "countryCode": "GB"
+    },
+    {
+      "id": "c67099",
+      "name": "Rome",
+      "country": "Italy",
+      "countryCode": "IT"
+    },
+    {
+      "id": "c67100",
+      "name": "Barcelona",
+      "country": "Spain",
+      "countryCode": "ES"
+    }
+  ],
+  "error_rate_limit": {
+    "error": {
+      "code": "RATE_LIMIT_EXCEEDED",
+      "message": "API rate limit exceeded. Maximum 20 requests per minute allowed.",
+      "retryAfter": 45
+    }
+  },
+  "error_city_not_found": {
+    "error": {
+      "code": "CITY_NOT_FOUND",
+      "message": "The requested city was not found in our database.",
+      "details": {
+        "cityId": "invalid123"
+      }
+    }
+  }
+}

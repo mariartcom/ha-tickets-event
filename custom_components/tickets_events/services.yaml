@@ -1,0 +1,137 @@
+# Services for Tickets & Events integration
+
+search_events:
+  name: Search Events
+  description: Search for events by name or keyword
+  fields:
+    query:
+      name: Search Query
+      description: The search term (event name, keyword, or category)
+      required: true
+      example: "museum"
+      selector:
+        text:
+    currency:
+      name: Currency
+      description: Currency code for prices
+      required: false
+      default: "EUR"
+      selector:
+        select:
+          options:
+            - "EUR"
+            - "USD"
+            - "GBP"
+            - "RON"
+            - "CHF"
+            - "AUD"
+            - "CAD"
+
+get_events_by_date:
+  name: Get Events by Date
+  description: Retrieve events within a specific date range
+  fields:
+    date_from:
+      name: Start Date
+      description: Start date in YYYY-MM-DD format
+      required: true
+      example: "2026-02-14"
+      selector:
+        date:
+    date_to:
+      name: End Date
+      description: End date in YYYY-MM-DD format
+      required: true
+      example: "2026-02-21"
+      selector:
+        date:
+    currency:
+      name: Currency
+      description: Currency code for prices
+      required: false
+      default: "EUR"
+      selector:
+        select:
+          options:
+            - "EUR"
+            - "USD"
+            - "GBP"
+            - "RON"
+
+generate_booking_url:
+  name: Generate Booking URL
+  description: Generate a customized booking URL for an event
+  fields:
+    event_id:
+      name: Event ID
+      description: The unique event identifier
+      required: true
+      example: 976227
+      selector:
+        number:
+          min: 1
+          mode: box
+    date:
+      name: Date
+      description: Preferred date for the event (YYYY-MM-DD)
+      required: false
+      example: "2026-02-14"
+      selector:
+        date:
+    timeslot:
+      name: Time Slot
+      description: Preferred time slot (HH:MM format)
+      required: false
+      example: "09:00"
+      selector:
+        time:
+    tickets:
+      name: Ticket Configuration
+      description: Dictionary of ticket types and quantities
+      required: false
+      example: '{"adult": 2, "child": 1}'
+      selector:
+        object:
+    language:
+      name: Language
+      description: Preferred language code for the event
+      required: false
+      example: "eng"
+      selector:
+        select:
+          options:
+            - "eng"
+            - "fra"
+            - "deu"
+            - "spa"
+            - "ita"
+            - "ron"
+    currency:
+      name: Currency
+      description: Currency code for booking
+      required: false
+      default: "EUR"
+      selector:
+        select:
+          options:
+            - "EUR"
+            - "USD"
+            - "GBP"
+            - "RON"
+
+refresh_events:
+  name: Refresh Events
+  description: Manually refresh event data
+  fields:
+    sensor:
+      name: Sensor Type
+      description: Specific sensor to refresh (optional)
+      required: false
+      example: "today"
+      selector:
+        select:
+          options:
+            - "today"
+            - "nearby"
+            - "calendar"
+            - "search"
