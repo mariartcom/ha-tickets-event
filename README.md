@@ -66,6 +66,19 @@ A Home Assistant integration that provides event and attraction listings with ti
    - Choose your preferred currency
    - Set default search radius (optional)
 
+### Frontend Cards Setup (One-Time)
+
+After installing the integration, register the Lovelace cards:
+
+1. Go to **Settings** → **Dashboards** → **⋮** → **Resources**
+2. Click **"+ Add Resource"** and add each:
+   - `/hacsfiles/tickets_events/tickets-events-card.js` (Basic card)
+   - `/hacsfiles/tickets_events/tickets-events-card-enhanced.js` (Enhanced with modal)
+   - `/hacsfiles/tickets_events/tickets-events-map.js` (Map view)
+   - Resource type: **JavaScript Module**
+
+See [Frontend Setup Guide](docs/FRONTEND_SETUP.md) for detailed instructions.
+
 ### Options
 
 You can reconfigure the integration at any time:
