@@ -170,12 +170,12 @@ data:
 
 ## Lovelace Examples
 
-### Custom Events Card (Recommended)
+### 1. Enhanced Events Card (Recommended)
 
-The integration includes a beautiful custom card with booking buttons:
+The best way to view events with a detail modal showing map, QR code, and booking:
 
 ```yaml
-type: custom:tickets-events-card
+type: custom:tickets-events-card-enhanced
 entity: sensor.tickets_events_today
 title: "Today's Events in Bucharest"
 max_events: 5
@@ -185,14 +185,47 @@ show_price: true
 ```
 
 **Features:**
-- 🎨 Beautiful card design with images
-- 💰 Price display with currency
-- ⭐ Ratings and reviews
+- 🗺️ Click "View Details" for interactive map
+- 📱 QR codes for mobile booking
+- 💰 Price and availability info
 - 🎫 One-click booking buttons
-- 📱 Mobile responsive
-- 🏷️ Event type badges
+- ⭐ Ratings and reviews
+- 📝 Full descriptions
 
-See [Custom Card Documentation](custom_components/tickets_events/www/README.md) for more options.
+See [Complete Cards Guide](custom_components/tickets_events/www/CARDS_GUIDE.md) for more options.
+
+### 2. Events Map Card
+
+Display all events on an interactive map:
+
+```yaml
+type: custom:tickets-events-map
+entity: sensor.tickets_events_today
+title: "Events Map"
+height: 500px
+zoom: 13
+```
+
+**Features:**
+- 🗺️ Interactive OpenStreetMap
+- 📍 Color-coded markers by type
+- 💬 Click markers for details
+- 🎫 Direct booking from popups
+- 🎨 Auto-centering and zoom
+
+### 3. Basic Events Card
+
+Simple list view of events:
+
+```yaml
+type: custom:tickets-events-card
+entity: sensor.tickets_events_today
+title: "Today's Events"
+max_events: 5
+show_images: true
+show_rating: true
+show_price: true
+```
 
 ### Calendar View
 

@@ -53,6 +53,8 @@ SAMPLE_EVENTS: Final = [
         "is_checkout_disabled": False,
         "date": TODAY,
         "available_dates": [TODAY, TOMORROW, NEXT_WEEK],
+        "latitude": 44.4276,
+        "longitude": 26.0879,
         "images": [
             {
                 "url": "https://cdn.tiqets.com/wordpress/blog/wp-content/uploads/2019/03/27093459/Palace-of-the-Parliament-Bucharest.jpg",
@@ -82,6 +84,8 @@ SAMPLE_EVENTS: Final = [
         "is_checkout_disabled": False,
         "date": TODAY,
         "available_dates": [TODAY, TOMORROW],
+        "latitude": 44.4396,
+        "longitude": 26.0965,
         "images": [
             {
                 "url": "https://cdn.tiqets.com/wordpress/blog/wp-content/uploads/2019/08/12105632/national-museum-art-bucharest.jpg",
@@ -107,6 +111,8 @@ SAMPLE_EVENTS: Final = [
         "is_checkout_disabled": False,
         "date": TODAY,
         "available_dates": [TODAY, TOMORROW, NEXT_WEEK],
+        "latitude": 44.4722,
+        "longitude": 26.0764,
         "images": [
             {
                 "url": "https://cdn.tiqets.com/wordpress/blog/wp-content/uploads/2019/09/15114521/village-museum-bucharest.jpg",
@@ -132,6 +138,8 @@ SAMPLE_EVENTS: Final = [
         "is_checkout_disabled": False,
         "date": TOMORROW,
         "available_dates": [TOMORROW, NEXT_WEEK],
+        "latitude": 44.4308,
+        "longitude": 26.1025,
         "images": [
             {
                 "url": "https://cdn.tiqets.com/wordpress/blog/wp-content/uploads/2019/07/18142315/bucharest-old-town.jpg",
@@ -157,6 +165,8 @@ SAMPLE_EVENTS: Final = [
         "is_checkout_disabled": False,
         "date": TOMORROW,
         "available_dates": [TODAY, TOMORROW, NEXT_WEEK],
+        "latitude": 44.4634,
+        "longitude": 26.0181,
         "images": [
             {
                 "url": "https://cdn.tiqets.com/wordpress/blog/wp-content/uploads/2020/01/22134521/therme-bucharest.jpg",
@@ -182,6 +192,8 @@ SAMPLE_EVENTS: Final = [
         "is_checkout_disabled": False,
         "date": NEXT_WEEK,
         "available_dates": [NEXT_WEEK],
+        "latitude": 44.4414,
+        "longitude": 26.0975,
         "images": [
             {
                 "url": "https://cdn.tiqets.com/wordpress/blog/wp-content/uploads/2019/11/05153421/romanian-athenaeum.jpg",
@@ -207,6 +219,8 @@ SAMPLE_EVENTS: Final = [
         "is_checkout_disabled": False,
         "date": NEXT_WEEK,
         "available_dates": [NEXT_WEEK],
+        "latitude": 45.5150,
+        "longitude": 25.3667,
         "images": [
             {
                 "url": "https://cdn.tiqets.com/wordpress/blog/wp-content/uploads/2019/04/16095521/bran-castle-dracula.jpg",
@@ -232,6 +246,8 @@ SAMPLE_EVENTS: Final = [
         "is_checkout_disabled": False,
         "date": NEXT_WEEK,
         "available_dates": [TODAY, TOMORROW, NEXT_WEEK],
+        "latitude": 44.4359,
+        "longitude": 26.1003,
         "images": [
             {
                 "url": "https://cdn.tiqets.com/wordpress/blog/wp-content/uploads/2019/10/08163245/romanian-food-tour.jpg",
