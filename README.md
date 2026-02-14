@@ -16,6 +16,8 @@ A Home Assistant integration that provides event and attraction listings with ti
 - 📱 **QR Codes**: Generate QR codes for TV/dashboard displays
 - 🌍 **Multi-Language**: Support for multiple languages
 - ⚡ **Rate Limited**: Respects API limits (20 calls/minute)
+- 📆 **Calendar Integration**: Events appear in Home Assistant Calendar
+- 🎨 **Custom Card**: Beautiful Lovelace card with booking buttons
 
 ## Screenshots
 
@@ -81,8 +83,12 @@ The integration creates the following sensors:
 |--------|-------------|------------------|
 | `sensor.tickets_events_today` | Events happening today | Once per day |
 | `sensor.tickets_events_nearby` | Events in your city | Once per day |
-| `sensor.tickets_events_calendar` | Date-filtered events | On-demand |
-| `sensor.tickets_events_search` | Search results | On-demand |
+
+### Calendar
+
+| Entity | Description |
+|--------|-------------|
+| `calendar.tickets_events_events_calendar` | Calendar view of all events with dates |
 
 ### Sensor Attributes
 
@@ -163,6 +169,41 @@ data:
 ```
 
 ## Lovelace Examples
+
+### Custom Events Card (Recommended)
+
+The integration includes a beautiful custom card with booking buttons:
+
+```yaml
+type: custom:tickets-events-card
+entity: sensor.tickets_events_today
+title: "Today's Events in Bucharest"
+max_events: 5
+show_images: true
+show_rating: true
+show_price: true
+```
+
+**Features:**
+- 🎨 Beautiful card design with images
+- 💰 Price display with currency
+- ⭐ Ratings and reviews
+- 🎫 One-click booking buttons
+- 📱 Mobile responsive
+- 🏷️ Event type badges
+
+See [Custom Card Documentation](custom_components/tickets_events/www/README.md) for more options.
+
+### Calendar View
+
+Display events in Home Assistant's calendar:
+
+```yaml
+type: calendar
+entities:
+  - calendar.tickets_events_events_calendar
+initial_view: dayGridMonth
+```
 
 ### Basic Event Card
 
