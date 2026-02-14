@@ -209,14 +209,14 @@ class TicketsEventsApiClient:
     async def search_events(
         self,
         query: str,
-        if self._use_sample_data:
-            _LOGGER.debug("Returning sample search results for query: %s", query)
-            return search_sample_events(query, currency, limit)
-        
         currency: str = "EUR",
         limit: int = 50,
     ) -> dict[str, Any]:
         """Search for events."""
+        if self._use_sample_data:
+            _LOGGER.debug("Returning sample search results for query: %s", query)
+            return search_sample_events(query, currency, limit)
+        
         params = {
             "q": query,
             "currency": currency,
@@ -230,10 +230,6 @@ class TicketsEventsApiClient:
             raise
 
     async def get_nearby_events(
-        if self._use_sample_data:
-            _LOGGER.debug("Returning sample nearby events")
-            return get_nearby_sample_events(latitude, longitude, currency, radius, limit)
-        
         self,
         latitude: float,
         longitude: float,
@@ -242,6 +238,10 @@ class TicketsEventsApiClient:
         limit: int = 50,
     ) -> dict[str, Any]:
         """Get events near a location."""
+        if self._use_sample_data:
+            _LOGGER.debug("Returning sample nearby events")
+            return get_nearby_sample_events(latitude, longitude, currency, radius, limit)
+        
         params = {
             "lat": latitude,
             "lon": longitude,
@@ -262,10 +262,6 @@ class TicketsEventsApiClient:
             raise
 
     async def get_events_by_date(
-        if self._use_sample_data:
-            _LOGGER.debug("Returning sample events for date range %s to %s", date_from, date_to)
-            return get_sample_events_response(city_id, currency, limit)
-        
         self,
         city_id: str,
         date_from: str,
@@ -274,6 +270,10 @@ class TicketsEventsApiClient:
         limit: int = 50,
     ) -> dict[str, Any]:
         """Get events within a date range."""
+        if self._use_sample_data:
+            _LOGGER.debug("Returning sample events for date range %s to %s", date_from, date_to)
+            return get_sample_events_response(city_id, currency, limit)
+        
         params = {
             "cityId": city_id,
             "date_from": date_from,
@@ -283,10 +283,6 @@ class TicketsEventsApiClient:
         }
         
         try:
-        if self._use_sample_data:
-            _LOGGER.debug("Returning sample location data")
-            return resolve_sample_location(ip_address)
-        
             return await self._api_request(ENDPOINT_CALENDAR, params)
         except Exception as err:
             _LOGGER.error(
@@ -299,6 +295,10 @@ class TicketsEventsApiClient:
 
     async def resolve_location(self, ip_address: str | None = None) -> dict[str, Any]:
         """Resolve location from IP address."""
+        if self._use_sample_data:
+            _LOGGER.debug("Returning sample location data")
+            return resolve_sample_location(ip_address)
+        
         params = {}
         if ip_address:
             params["ip"] = ip_address
