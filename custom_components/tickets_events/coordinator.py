@@ -92,6 +92,9 @@ class TicketsEventsDataUpdateCoordinator(DataUpdateCoordinator):
                 currency=self.currency,
             )
             
+            _LOGGER.debug("Fetched events data: %s events for city %s", 
+                         len(events_data.get("events", [])), city_id)
+            
             # Store city information
             if city_id and city_id != self.city_id:
                 # Update stored city_id if it was auto-detected

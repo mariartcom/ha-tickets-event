@@ -476,8 +476,8 @@ def get_nearby_sample_events(
 def resolve_sample_location(ip_address: str | None = None) -> dict:
     """Resolve sample location."""
     return {
-        "city_id": "c76753",
-        "city_name": "Bucharest",
+        "cityId": "c76753",  # camelCase for consistency with API
+        "city": "Bucharest",  # Match coordinator expectation
         "country": "Romania",
         "country_code": "RO",
         "latitude": 44.4268,

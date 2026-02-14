@@ -97,6 +97,12 @@ class TicketsEventsConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                 if CONF_USE_SAMPLE_DATA not in config_data:
                     config_data[CONF_USE_SAMPLE_DATA] = DEFAULT_USE_SAMPLE_DATA
                 
+                # Add city name to config data
+                if user_input.get(CONF_CITY_ID) and user_input[CONF_CITY_ID] != "auto":
+                    city = next((c for c in self._cities if c["id"] == user_input[CONF_CITY_ID]), None)
+                    if city:
+                        config_data[CONF_CITY_NAME] = city["name"]
+                
                 # Create entry
                 return self.async_create_entry(
                     title=info["title"],

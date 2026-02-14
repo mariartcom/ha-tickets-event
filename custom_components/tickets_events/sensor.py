@@ -82,6 +82,7 @@ class TicketsEventsBaseSensor(CoordinatorEntity, SensorEntity):
             return 0
         
         events = self._get_events()
+        _LOGGER.debug("Sensor %s has %d events", self.sensor_type, len(events))
         return len(events)
 
     @property
@@ -114,7 +115,8 @@ class TicketsEventsBaseSensor(CoordinatorEntity, SensorEntity):
             return []
         
         events_data = self.coordinator.data.get("events", {})
-        return events_data.get("offeringCards", [])
+        # The API response contains events under "events" key
+        return events_data.get("events", [])
 
 
 class TicketsEventsTodaySensor(TicketsEventsBaseSensor):
