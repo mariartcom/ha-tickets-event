@@ -30,7 +30,7 @@ def validate_files():
     with open(os.path.join(base_path, "manifest.json")) as f:
         manifest = json.load(f)
     
-    required_keys = ["domain", "name", "version", "documentation", "requirements", "codeowners"]
+    required_keys = ["domain", "name", "version", "documentation", "requirements", "codeowners", "iot_class"]
     for key in required_keys:
         assert key in manifest, f"Missing required key in manifest: {key}"
         print(f"   ✓ {key}: {manifest[key]}")

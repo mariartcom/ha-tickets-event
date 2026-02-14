@@ -4,7 +4,7 @@ fire_event:
   fields:
     type:
       name: Event Type
-      description: The type of ticket event (e.g., new, updated, closed)
+      description: The type of ticket event. Common values include 'new', 'updated', 'closed', but you can use any custom value that makes sense for your use case.
       required: false
       default: "new"
       example: "new"
