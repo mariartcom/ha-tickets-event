@@ -135,3 +135,6 @@ Thumbs.db
 *.db-wal
 home-assistant.log
 home-assistant_v2.db
+
+# Project documentation (keep out of commits)
+docs/
